@@ -10,6 +10,8 @@
 + When you update or delete a file it can take some time(milli seconds depending on size of the file) to reflect in bucket globally.
 + Bucket will show you either old data or new data, there is no partial broken data that is shown in the bucket in case of update or delete operation.
 + We can encrypt data in S3 we have several methods to do so.
++ By default the S3 bucket is private and the objects stored in it are also private.
++ S3 Transfer acceleration
 + Different tiers of S3 buckets are:
 	+ S3 (immediatly availabe, durable, frquently accessed)
 	+ S3-IA (immediatly availabe, durable, not frquently accessed) 
