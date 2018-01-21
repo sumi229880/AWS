@@ -29,3 +29,18 @@
 + Upon successful upload of object in bucket it generates 200 status code.
 
 
+----
+
+### IAM Identity and Access Management
++ It basically consists of:
+    + Users
+    + Groups
+    + Roles
+    + Policy documents (JSON fromat)
++ IAM is universal and not region wise for one account.
++ New Users will have no permission when they are first created, you can assign them.
++ **Access key** id and **Secret Access key** are created one time per user for accessing aws via CLI or API.
++ Passwords used to login from console for users are not the same as these keys.
++ Access key and Secret Access key can be viewed only once if you loose them you have to regenerate them for that user.
+
+
