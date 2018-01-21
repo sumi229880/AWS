@@ -20,7 +20,7 @@
             + It basically you encrpty the data on client side and then upload to S3.
     
 + By default the S3 bucket is private and the objects stored in it are also private.
-+ S3 Transfer acceleration
++ S3 Transfer acceleration utilizes **CloudFront edge network** to accelerate uploads to S3. Instead of directly uploading to S3 you upload to edge location using url which will then transfer that file to S3.
 + Different tiers of S3 buckets are:
 	+ S3 (immediatly availabe, durable, frquently accessed)
 	+ S3-IA (immediatly availabe, durable, not frquently accessed) 
@@ -76,3 +76,24 @@
 + Access key and Secret Access key can be viewed only once if you loose them you have to regenerate them for that user.
 
 
+----
+
+### Storage Gateway
++ Its a service(like VM) that connects your applicance(like Datacentre) with cloud based applicance(eg:S3, EC2 etc) to provide seamless and secure integration.
++ It can be installed as a VM at your datacentre.
++ There are basically 4 types of storage gateways:
+    + File Gateway (NFS). For flat files, stored directly on S3.
+    + Volume Gateway (iSCSI). Basically they are like virtual hard disk that sit on data premis asynchronously backed up to cloud point-in-time snapshots of volumes. Snapshots are incremental backups that capture only changed blocks.
+        + Stored Volume. 1GB to 16 GB on prem storage volume. Entire data is stored on site and asynchronously backed to cloud.
+        + Cached Volume. Uses S3 as primary data storage. We just keep recently accessed data on prem and rest of the data is on AWS. Entire data is stored on cloud and most frequently accessed data is on site/prem.
+    + Tape Gateway (VTL). Cost effective solution to backup data in cloud. Uses popular back up applications like Netbackup, BackupExec, Veeam etc.  
+    
+
+----
+
+### Snowball
++ Its moving large amount of data into and out of cloud using portable storage device using high speed internal network bypassing the internet.
++There are 3 types of snowball:
+    + Snowball- 40TB storage capacity.
+    + Snowball edge- 100TB of data and its not just storage capacity it also provide compute capacity.
+    + Snowmobile- like a truck having petabyte or more amount of data capacity.
